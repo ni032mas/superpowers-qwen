@@ -1,0 +1,6 @@
+.git
+.gitignore
+.github
+*.md
+!README.md
+scripts/uninstall-skills.js
