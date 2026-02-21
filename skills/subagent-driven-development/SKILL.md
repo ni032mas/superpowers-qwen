@@ -1,6 +1,7 @@
 ---
 name: subagent-driven-development
-description: "Use for delegated task execution with 2-stage review. Use when user says 'delegate', 'subagent', 'assign task', 'let someone else do it', 'parallel work', 'fast iteration'."
+description: Use for delegated task execution with 2-stage review. Fast iteration with fresh subagent per task.
+disable-model-invocation: false
 ---
 
 # Subagent-Driven Development

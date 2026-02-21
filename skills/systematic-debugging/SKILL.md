@@ -1,6 +1,7 @@
 ---
 name: systematic-debugging
-description: "Use for bugs, errors, unexpected behavior, crashes, failures. 4-phase root cause analysis. Use when user says 'bug', 'error', 'not working', 'crash', 'fail', 'fix', 'debug', 'issue', 'problem', 'broken'."
+description: Use for bugs, errors, unexpected behavior, crashes, failures. 4-phase root cause analysis.
+disable-model-invocation: false
 ---
 
 # Systematic Debugging

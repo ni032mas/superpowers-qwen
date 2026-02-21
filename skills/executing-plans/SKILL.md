@@ -1,6 +1,7 @@
 ---
 name: executing-plans
-description: "Use AFTER plan is written. Execute tasks in batches with review checkpoints. Use when user says 'execute plan', 'implement tasks', 'start coding', 'begin implementation', 'follow the plan'."
+description: Use after a written implementation plan exists. Execute tasks in batches with review checkpoints.
+disable-model-invocation: false
 ---
 
 # Executing Plans

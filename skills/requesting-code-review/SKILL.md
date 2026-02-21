@@ -1,6 +1,7 @@
 ---
 name: requesting-code-review
-description: "Use BEFORE commit/merge, after completing tasks. Review code for bugs, security, performance. Use when user says 'review', 'check code', 'before merge', 'before commit', 'verify', 'code quality'."
+description: Use before commit/merge, after completing tasks. Review code for bugs, security, performance issues.
+disable-model-invocation: false
 ---
 
 # Requesting Code Review

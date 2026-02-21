@@ -1,6 +1,7 @@
 ---
 name: finishing-a-development-branch
-description: "Use when ALL tasks complete. Verify tests, create PR/merge, cleanup. Use when user says 'finish', 'complete', 'merge', 'PR', 'pull request', 'done with branch', 'ready to merge', 'cleanup'."
+description: Use when all tasks are complete. Workflow for verification, merge/PR, and finishing development.
+disable-model-invocation: false
 ---
 
 # Finishing a Development Branch

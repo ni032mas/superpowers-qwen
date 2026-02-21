@@ -1,6 +1,7 @@
 ---
 name: writing-plans
-description: "Use AFTER brainstorming/design approval, BEFORE coding. Creates implementation plan with bite-sized tasks. Use when user says 'plan', 'implement', 'build', 'create feature', 'write code', 'add functionality'."
+description: Use after brainstorming/design approval, before coding. Creates implementation plan with bite-sized tasks for multi-step work.
+disable-model-invocation: false
 ---
 
 # Writing Plans

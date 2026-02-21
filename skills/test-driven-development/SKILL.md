@@ -1,6 +1,7 @@
 ---
 name: test-driven-development
-description: "Use BEFORE writing ANY implementation code. RED-GREEN-REFACTOR cycle. Use when user says 'implement', 'add feature', 'fix bug', 'write test', 'TDD', 'create component', 'add function'."
+description: Use before writing any implementation code. RED-GREEN-REFACTOR cycle for features and bugfixes.
+disable-model-invocation: false
 ---
 
 # Test-Driven Development (TDD)
