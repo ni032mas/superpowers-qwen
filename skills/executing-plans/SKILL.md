@@ -1,6 +1,6 @@
 ---
 name: executing-plans
-description: "Use when you have a written implementation plan to execute in a separate session with review checkpoints"
+description: "Use AFTER plan is written. Execute tasks in batches with review checkpoints. Use when user says 'execute plan', 'implement tasks', 'start coding', 'begin implementation', 'follow the plan'."
 ---
 
 # Executing Plans

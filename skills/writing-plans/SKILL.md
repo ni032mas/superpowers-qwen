@@ -1,6 +1,6 @@
 ---
 name: writing-plans
-description: "Use when you have a spec or requirements for a multi-step task, before touching code"
+description: "Use AFTER brainstorming/design approval, BEFORE coding. Creates implementation plan with bite-sized tasks. Use when user says 'plan', 'implement', 'build', 'create feature', 'write code', 'add functionality'."
 ---
 
 # Writing Plans

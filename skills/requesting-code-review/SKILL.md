@@ -1,6 +1,6 @@
 ---
 name: requesting-code-review
-description: "Use when completing tasks, implementing major features, or before merging to verify work meets requirements"
+description: "Use BEFORE commit/merge, after completing tasks. Review code for bugs, security, performance. Use when user says 'review', 'check code', 'before merge', 'before commit', 'verify', 'code quality'."
 ---
 
 # Requesting Code Review

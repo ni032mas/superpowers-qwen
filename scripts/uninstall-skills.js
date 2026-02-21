@@ -5,7 +5,19 @@ const path = require('path');
 const os = require('os');
 
 // Пути
-const SKILLS_DIR = path.join(os.homedir(), '.qwen', 'skills', 'superpowers');
+const GLOBAL_SKILLS_DIR = path.join(os.homedir(), '.qwen', 'skills');
+
+// Список скиллов для удаления
+const SKILLS_TO_REMOVE = [
+  'superpowers-brainstorming',
+  'superpowers-executing-plans',
+  'superpowers-finishing-a-development-branch',
+  'superpowers-requesting-code-review',
+  'superpowers-subagent-driven-development',
+  'superpowers-systematic-debugging',
+  'superpowers-test-driven-development',
+  'superpowers-writing-plans'
+];
 
 /**
  * Рекурсивное удаление директории
@@ -36,10 +48,19 @@ function removeDirectory(dir) {
 function uninstallSkills() {
   console.log('🗑️  Uninstalling Qwen Superpowers...\n');
   
-  if (fs.existsSync(SKILLS_DIR)) {
-    removeDirectory(SKILLS_DIR);
-    console.log(`✅ Removed: ${SKILLS_DIR}`);
-    console.log('\n✨ Qwen Superpowers uninstalled successfully!');
+  let removedCount = 0;
+  
+  for (const skill of SKILLS_TO_REMOVE) {
+    const skillPath = path.join(GLOBAL_SKILLS_DIR, skill);
+    if (fs.existsSync(skillPath)) {
+      removeDirectory(skillPath);
+      console.log(`✅ Removed: ${skill}`);
+      removedCount++;
+    }
+  }
+  
+  if (removedCount > 0) {
+    console.log(`\n✨ Successfully removed ${removedCount} skill(s)!`);
   } else {
     console.log('ℹ️  Qwen Superpowers not found. Nothing to remove.');
   }

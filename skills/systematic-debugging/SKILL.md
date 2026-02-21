@@ -1,6 +1,6 @@
 ---
 name: systematic-debugging
-description: "Use when there is a bug or unexpected behavior — 4-phase process for finding root cause"
+description: "Use for bugs, errors, unexpected behavior, crashes, failures. 4-phase root cause analysis. Use when user says 'bug', 'error', 'not working', 'crash', 'fail', 'fix', 'debug', 'issue', 'problem', 'broken'."
 ---
 
 # Systematic Debugging

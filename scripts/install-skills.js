@@ -5,7 +5,7 @@ const path = require('path');
 const os = require('os');
 
 // Пути
-const SKILLS_DIR = path.join(os.homedir(), '.qwen', 'skills', 'superpowers');
+const GLOBAL_SKILLS_DIR = path.join(os.homedir(), '.qwen', 'skills');
 const SOURCE_DIR = path.join(__dirname, '..', 'skills');
 
 /**
@@ -37,9 +37,9 @@ function installSkills() {
   console.log('🚀 Installing Qwen Superpowers...\n');
   
   // Создаём директорию скиллов, если не существует
-  if (!fs.existsSync(SKILLS_DIR)) {
-    fs.mkdirSync(SKILLS_DIR, { recursive: true });
-    console.log(`📁 Created directory: ${SKILLS_DIR}`);
+  if (!fs.existsSync(GLOBAL_SKILLS_DIR)) {
+    fs.mkdirSync(GLOBAL_SKILLS_DIR, { recursive: true });
+    console.log(`📁 Created directory: ${GLOBAL_SKILLS_DIR}`);
   }
   
   // Копируем скиллы из пакета в целевую директорию
@@ -53,17 +53,17 @@ function installSkills() {
   
   for (const skill of skills) {
     const srcPath = path.join(SOURCE_DIR, skill);
-    const destPath = path.join(SKILLS_DIR, skill);
+    const destPath = path.join(GLOBAL_SKILLS_DIR, `superpowers-${skill}`);
     
     if (fs.statSync(srcPath).isDirectory()) {
       copyDirectory(srcPath, destPath);
-      console.log(`✅ Installed: ${skill}`);
+      console.log(`✅ Installed: superpowers-${skill}`);
       installedCount++;
     }
   }
   
   console.log(`\n✨ Successfully installed ${installedCount} skill(s)!`);
-  console.log(`📍 Location: ${SKILLS_DIR}`);
+  console.log(`📍 Location: ${GLOBAL_SKILLS_DIR}`);
   console.log('\nTo use: restart Qwen Code and ask it to help with a task.');
 }
 
