@@ -53,11 +53,11 @@ function installSkills() {
   
   for (const skill of skills) {
     const srcPath = path.join(SOURCE_DIR, skill);
-    const destPath = path.join(GLOBAL_SKILLS_DIR, `superpowers-${skill}`);
+    const destPath = path.join(GLOBAL_SKILLS_DIR, skill);
     
     if (fs.statSync(srcPath).isDirectory()) {
       copyDirectory(srcPath, destPath);
-      console.log(`✅ Installed: superpowers-${skill}`);
+      console.log(`✅ Installed: ${skill}`);
       installedCount++;
     }
   }

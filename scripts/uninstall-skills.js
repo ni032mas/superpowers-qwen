@@ -9,14 +9,14 @@ const GLOBAL_SKILLS_DIR = path.join(os.homedir(), '.qwen', 'skills');
 
 // Список скиллов для удаления
 const SKILLS_TO_REMOVE = [
-  'superpowers-brainstorming',
-  'superpowers-executing-plans',
-  'superpowers-finishing-a-development-branch',
-  'superpowers-requesting-code-review',
-  'superpowers-subagent-driven-development',
-  'superpowers-systematic-debugging',
-  'superpowers-test-driven-development',
-  'superpowers-writing-plans'
+  'brainstorming',
+  'executing-plans',
+  'finishing-a-development-branch',
+  'requesting-code-review',
+  'subagent-driven-development',
+  'systematic-debugging',
+  'test-driven-development',
+  'writing-plans'
 ];
 
 /**

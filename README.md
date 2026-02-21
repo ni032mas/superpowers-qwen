@@ -27,7 +27,7 @@ npm install -g qwen-superpowers
 npm install -g github:YOUR_USERNAME/qwen-superpowers
 ```
 
-The package will automatically copy skills to `~/.qwen/skills/superpowers` during installation.
+The package will automatically copy skills to `~/.qwen/skills/` during installation.
 
 ### Option 2: Manual (Git)
 
@@ -45,9 +45,26 @@ The package will automatically copy skills to `~/.qwen/skills/superpowers` durin
    cp -r qwen-superpowers/skills ~/.qwen/skills/superpowers
    ```
 
+## ⚙️ Enabling Skills
+
+**Important:** Skills are an experimental feature. You may need to enable them:
+
+1. Open `%USERPROFILE%\.qwen\settings.json` (Windows) or `~/.qwen/settings.json` (macOS/Linux)
+2. Add the following setting:
+   ```json
+   {
+     "tools": {
+       "experimentalSkills": true
+     }
+   }
+   ```
+3. Restart Qwen Code
+
+For more details, see [ENABLING_SKILLS.md](./ENABLING_SKILLS.md).
+
 ### Verify Installation
 
-Ask Qwen Code something like *"help me plan this feature"* — it should automatically invoke the appropriate skill.
+Ask Qwen Code something like *"help me plan this feature"* or run `/skills` to see available skills.
 
 ### Uninstall
 
