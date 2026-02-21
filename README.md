@@ -26,23 +26,10 @@ cd qwen-superpowers
 npm install -g .
 ```
 
-### Option 2: From GitHub (requires auth for private repo)
+### Option 2: From GitHub
 
-First, create a GitHub Personal Access Token at https://github.com/settings/tokens
-
-Then install:
 ```bash
-# With token
-npm install -g https://<TOKEN>@github.com/ni032mas/qwen-superpowers.git
-```
-
-Or add to `.npmrc`:
-```
-//github.com/:_authToken=<YOUR_GITHUB_TOKEN>
-```
-
-Then:
-```bash
+# Install directly from GitHub
 npm install -g github:ni032mas/qwen-superpowers
 ```
 

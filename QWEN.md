@@ -16,7 +16,7 @@ Guide Qwen Code through a structured development process:
 
 ### Repository
 
-- **URL**: https://github.com/ni032mas/qwen-superpowers (private)
+- **URL**: https://github.com/ni032mas/qwen-superpowers
 - **Package**: `qwen-superpowers@1.0.0`
 - **License**: MIT
 
@@ -231,4 +231,3 @@ npm uninstall -g qwen-superpowers
 - Skills are copied to **global** Qwen directory (`~/.qwen/skills/`) on install
 - npm `preuninstall` scripts don't work for global packages from registry
 - Use `qwen-superpowers-cleanup` before `npm uninstall -g`
-- GitHub installation requires authentication for private repos

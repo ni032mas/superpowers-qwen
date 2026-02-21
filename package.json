@@ -27,15 +27,15 @@
     "tdd",
     "code-review"
   ],
-  "author": "",
+  "author": "ni032mas <ni032mas@mail.ru>",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/YOUR_USERNAME/qwen-superpowers.git"
+    "url": "https://github.com/ni032mas/qwen-superpowers.git"
   },
-  "homepage": "https://github.com/YOUR_USERNAME/qwen-superpowers#readme",
+  "homepage": "https://github.com/ni032mas/qwen-superpowers#readme",
   "bugs": {
-    "url": "https://github.com/YOUR_USERNAME/qwen-superpowers/issues"
+    "url": "https://github.com/ni032mas/qwen-superpowers/issues"
   },
   "engines": {
     "node": ">=18.0.0"
