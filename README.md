@@ -4,6 +4,9 @@
 
 A collection of composable skills for Qwen Code that enforce structured software development workflows.
 
+[![npm version](https://badge.fury.io/js/superpowers-qwen.svg)](https://www.npmjs.com/package/superpowers-qwen)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 ## 🎯 What is this?
 
 Qwen Superpowers is a set of mandatory workflows that guide Qwen Code through disciplined software development practices. Instead of jumping straight into coding, the agent follows a structured process:
@@ -17,13 +20,11 @@ Qwen Superpowers is a set of mandatory workflows that guide Qwen Code through di
 
 ## 📦 Installation
 
-### Option 1: Local install (for testing)
+### Option 1: From npm (Recommended)
 
 ```bash
-# Clone and install locally
-git clone git@github.com:ni032mas/superpowers-qwen.git
-cd superpowers-qwen
-npm install -g .
+# Install from npm registry
+npm install -g superpowers-qwen
 ```
 
 ### Option 2: From GitHub
@@ -33,19 +34,67 @@ npm install -g .
 npm install -g github:ni032mas/superpowers-qwen
 ```
 
+### Option 3: Local install (for development)
+
+```bash
+# Clone and install locally
+git clone git@github.com:ni032mas/superpowers-qwen.git
+cd superpowers-qwen
+npm install -g .
+```
+
 ### Verify Installation
 
-Ask Qwen Code something like:
-```
-use brainstorming skill to help me plan a feature
-```
+After installation, the skills are automatically copied to `~/.qwen/skills/`.
 
-Or use the explicit command:
+To verify, ask Qwen Code:
 ```
 /skills brainstorming
 ```
 
-### Uninstall
+Or use explicit commands:
+```
+use brainstorming skill to help me plan a feature
+```
+
+## 💡 Usage Examples
+
+### Start a new feature
+```
+/skills brainstorming - I want to add user authentication to my app
+```
+
+### Create an implementation plan
+```
+/skills writing-plans - Help me plan the database migration feature
+```
+
+### Execute a plan
+```
+/skills executing-plans - Let's implement the login form
+```
+
+### Test-driven development
+```
+/skills test-driven-development - Write tests for the user service
+```
+
+### Code review
+```
+/skills requesting-code-review - Review my changes in src/auth.ts
+```
+
+### Debug an issue
+```
+/skills systematic-debugging - The app crashes when logging in
+```
+
+### Finish a branch
+```
+/skills finishing-a-development-branch - I'm done with the feature
+```
+
+## 🗑️ Uninstall
 
 **Note:** Due to npm limitations, uninstall requires two steps:
 
@@ -101,14 +150,21 @@ rm -rf ~/.qwen/skills/executing-plans
 npm update -g superpowers-qwen
 
 # If installed from GitHub
-npm update -g github:YOUR_USERNAME/superpowers-qwen
+npm update -g github:ni032mas/superpowers-qwen
 
-# If installed manually (Git)
+# If installed locally (Git)
 cd superpowers-qwen
 git pull
+npm install -g .
 ```
 
 Then restart Qwen Code.
+
+## 📋 Requirements
+
+- **Node.js** >= 18.0.0
+- **Qwen Code** CLI
+- **npm** or **yarn**
 
 ## 📚 Philosophy
 
@@ -118,6 +174,28 @@ Then restart Qwen Code.
 - ✅ **Evidence** over assertions
 - ✅ **Review** before completion
 
+## 📖 Documentation
+
+- [Development Guide](DEVELOPMENT.md) - How to develop and contribute skills
+- [Testing Guide](TESTING.md) - How to test the package
+- [Qwen Superpowers Context](QWEN.md) - Full project documentation
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes using [Conventional Commits](https://www.conventionalcommits.org/)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 🙏 Acknowledgments
+
+- [obra/superpowers](https://github.com/obra/superpowers) - The original inspiration for this workflow
+
 ---
 
-*This project adapts the excellent [superpowers](https://github.com/obra/superpowers) workflow for Qwen Code.* 
+*Made with ❤️ for the Qwen Code community* 

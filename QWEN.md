@@ -122,6 +122,33 @@ git config core.hooksPath .githooks
 - `pre-merge-commit` - Runs before merge commits
 - `pre-push` - Runs before push
 
+### Git Workflow (MANDATORY)
+
+#### Protected Branches
+- **NEVER commit directly to `dev` or `main` branches** - always use feature branches
+- Keep `main` branch stable and deployable
+- Keep `dev` branch as integration branch
+
+#### Branch Workflow
+1. **Before creating branch**: Update `dev` with `git checkout dev && git pull --rebase`
+2. **Before starting implementation**: Always ask user about creating a new feature branch from `dev`
+3. **After completing work**: Always ask user about rebasing feature branch onto `dev` (`git rebase dev`)
+4. **After rebase**: Always ask user about creating a Pull Request
+5. **Direct merge to `dev` is FORBIDDEN** - only merge via approved Pull Request
+6. **Use regular merge only** when rebase causes unresolvable conflicts - requires explicit human approval
+
+#### Commit Rules
+- Commit messages in English
+- Follow conventional commit format: `feat:`, `fix:`, `docs:`, `style:`, `refactor:`, `test:`, `chore:`
+- No co-authors in commit messages
+
+#### Other Rules
+- **Do NOT use git worktrees** - work directly in the main repository on feature branches
+- Write clear PR descriptions with context and screenshots if applicable
+- Review code for style, correctness, tests, and documentation before merging
+- Squash commits when merging PRs
+- Tag releases with semantic versioning (vX.Y.Z)
+
 ### Commit Message Format
 
 All commits must follow [Conventional Commits](https://www.conventionalcommits.org/):
