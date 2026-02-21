@@ -17,33 +17,34 @@ Qwen Superpowers is a set of mandatory workflows that guide Qwen Code through di
 
 ## 📦 Installation
 
-### Option 1: npm (Recommended)
+### Option 1: Local install (for testing)
 
 ```bash
-# Install globally
-npm install -g qwen-superpowers
-
-# Or install from GitHub
-npm install -g github:YOUR_USERNAME/qwen-superpowers
+# Clone and install locally
+git clone git@github.com:ni032mas/qwen-superpowers.git
+cd qwen-superpowers
+npm install -g .
 ```
 
-The package will automatically copy skills to `~/.qwen/skills/` during installation.
+### Option 2: From GitHub (requires auth for private repo)
 
-### Option 2: Manual (Git)
+First, create a GitHub Personal Access Token at https://github.com/settings/tokens
 
-1. Clone this repository:
-   ```bash
-   git clone https://github.com/YOUR_USERNAME/qwen-superpowers.git
-   ```
+Then install:
+```bash
+# With token
+npm install -g https://<TOKEN>@github.com/ni032mas/qwen-superpowers.git
+```
 
-2. Copy or symlink the `skills` folder to your Qwen Code skills directory:
-   - **Windows**: `%USERPROFILE%\.qwen\skills\superpowers`
-   - **macOS/Linux**: `~/.qwen/skills/superpowers`
+Or add to `.npmrc`:
+```
+//github.com/:_authToken=<YOUR_GITHUB_TOKEN>
+```
 
-   ```bash
-   # Example for macOS/Linux
-   cp -r qwen-superpowers/skills ~/.qwen/skills/superpowers
-   ```
+Then:
+```bash
+npm install -g github:ni032mas/qwen-superpowers
+```
 
 ### Verify Installation
 
