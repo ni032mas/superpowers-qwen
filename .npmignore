@@ -1,7 +1,0 @@
-.git
-.gitignore
-.github
-*.md
-!README.md
-qwen-extension.json
-qwen-superpowers-*.tgz
