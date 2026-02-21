@@ -1,0 +1,56 @@
+#!/usr/bin/env bash
+
+# Pre-merge-commit hook: Only allow release/* and hotfix/* branches to merge into 'main'.
+
+branch=$(git symbolic-ref --short HEAD 2>/dev/null)
+
+# Only check merges into main
+if [ "$branch" != "main" ]; then
+    exit 0
+fi
+
+# Get the branch being merged from MERGE_MSG
+merge_msg_file="$(git rev-parse --git-dir)/MERGE_MSG"
+if [ ! -f "$merge_msg_file" ]; then
+    exit 0
+fi
+
+merge_msg=$(cat "$merge_msg_file")
+
+# Extract source branch name from merge commit message
+# Format: "Merge branch 'branch-name'" or "Merge branch 'branch-name' into main"
+source_branch=$(echo "$merge_msg" | sed -n "s/^Merge branch '\(.*\)'.*/\1/p")
+
+if [ -z "$source_branch" ]; then
+    # Could be a merge from remote: "Merge remote-tracking branch 'origin/branch-name'"
+    source_branch=$(echo "$merge_msg" | sed -n "s/^Merge remote-tracking branch '.*\/\(.*\)'.*/\1/p")
+fi
+
+if [ -z "$source_branch" ]; then
+    exit 0
+fi
+
+# Check if source branch starts with release/ or hotfix/
+case "$source_branch" in
+    release/*|hotfix/*)
+        exit 0
+        ;;
+    *)
+        echo ""
+        echo "╔══════════════════════════════════════════════════════════╗"
+        echo "║  GIT HOOK: pre-merge-commit                             ║"
+        echo "╠══════════════════════════════════════════════════════════╣"
+        echo "║  ERROR: Only 'release/*' and 'hotfix/*' branches        ║"
+        echo "║         can be merged into 'main'.                      ║"
+        echo "║                                                         ║"
+        echo "║  Source branch: $source_branch"
+        echo "║                                                         ║"
+        echo "║  How to fix:                                            ║"
+        echo "║    Create a release or hotfix branch first:              ║"
+        echo "║    git checkout -b release/1.0.0 dev                     ║"
+        echo "║    git checkout -b hotfix/fix-name main                  ║"
+        echo "╚══════════════════════════════════════════════════════════╝"
+        echo ""
+        exit 1
+        ;;
+esac

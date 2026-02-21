@@ -1,0 +1,56 @@
+#!/usr/bin/env bash
+
+# Pre-push hook: Prevent force pushes to 'dev' and 'main' branches.
+# Detects non-fast-forward pushes by checking if remote SHA is an ancestor of local SHA.
+
+remote="$1"
+
+protected_branches="dev main"
+
+while read -r local_ref local_sha remote_ref remote_sha; do
+    # Extract branch name from ref
+    remote_branch=$(echo "$remote_ref" | sed 's|refs/heads/||')
+
+    # Check if pushing to a protected branch
+    for protected in $protected_branches; do
+        if [ "$remote_branch" = "$protected" ]; then
+            # Skip if deleting a branch (local_sha is all zeros)
+            if [ "$local_sha" = "0000000000000000000000000000000000000000" ]; then
+                echo ""
+                echo "╔══════════════════════════════════════════════════════════╗"
+                echo "║  GIT HOOK: pre-push                                     ║"
+                echo "╠══════════════════════════════════════════════════════════╣"
+                echo "║  ERROR: Deleting protected branch '$protected' is        ║"
+                echo "║         not allowed.                                     ║"
+                echo "╚══════════════════════════════════════════════════════════╝"
+                echo ""
+                exit 1
+            fi
+
+            # Skip if remote branch is new (remote_sha is all zeros)
+            if [ "$remote_sha" = "0000000000000000000000000000000000000000" ]; then
+                continue
+            fi
+
+            # Check if this is a non-fast-forward push
+            if ! git merge-base --is-ancestor "$remote_sha" "$local_sha" 2>/dev/null; then
+                echo ""
+                echo "╔══════════════════════════════════════════════════════════╗"
+                echo "║  GIT HOOK: pre-push                                     ║"
+                echo "╠══════════════════════════════════════════════════════════╣"
+                echo "║  ERROR: Force push to '$protected' is not allowed.       ║"
+                echo "║                                                         ║"
+                echo "║  This push would rewrite history on a protected branch.  ║"
+                echo "║                                                         ║"
+                echo "║  How to fix:                                            ║"
+                echo "║    git pull --rebase origin $protected                   ║"
+                echo "║    git push origin $protected                            ║"
+                echo "╚══════════════════════════════════════════════════════════╝"
+                echo ""
+                exit 1
+            fi
+        fi
+    done
+done
+
+exit 0
