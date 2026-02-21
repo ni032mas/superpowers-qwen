@@ -64,7 +64,15 @@ For more details, see [ENABLING_SKILLS.md](./ENABLING_SKILLS.md).
 
 ### Verify Installation
 
-Ask Qwen Code something like *"help me plan this feature"* or run `/skills` to see available skills.
+Ask Qwen Code something like:
+```
+use brainstorming skill to help me plan a feature
+```
+
+Or use the explicit command:
+```
+/skills brainstorming
+```
 
 ### Uninstall
 
