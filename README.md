@@ -59,16 +59,28 @@ Or use the explicit command:
 
 ### Uninstall
 
+**Important:** Run the uninstall command BEFORE removing the npm package:
+
 ```bash
-# If installed via npm (recommended)
+# Step 1: Remove skills from ~/.qwen/skills/
 qwen-superpowers-uninstall
 
-# Or manually remove
-rm -rf ~/.qwen/skills/superpowers  # macOS/Linux
-rmdir /s /q %USERPROFILE%\.qwen\skills\superpowers  # Windows
-
-# Then remove the package
+# Step 2: Remove the npm package
 npm uninstall -g qwen-superpowers
+```
+
+**If you already uninstalled the package**, remove skills manually:
+
+```bash
+# Windows
+rmdir /s /q %USERPROFILE%\.qwen\skills\brainstorming
+rmdir /s /q %USERPROFILE%\.qwen\skills\executing-plans
+# ... repeat for each skill
+
+# macOS/Linux
+rm -rf ~/.qwen/skills/brainstorming
+rm -rf ~/.qwen/skills/executing-plans
+# ... repeat for each skill
 ```
 
 ## ⚡ Available Skills
