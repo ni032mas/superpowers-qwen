@@ -1,12 +1,12 @@
 {
-  "name": "qwen-superpowers",
+  "name": "superpowers-qwen",
   "version": "1.0.0",
   "description": "Superpowers for Qwen Code - structured development workflows and skills",
   "main": "scripts/install-skills.js",
   "bin": {
-    "qwen-superpowers-install": "./scripts/install-skills.js",
-    "qwen-superpowers-uninstall": "./scripts/uninstall-skills.js",
-    "qwen-superpowers-cleanup": "./scripts/cleanup-skills.js"
+    "superpowers-qwen-install": "./scripts/install-skills.js",
+    "superpowers-qwen-uninstall": "./scripts/uninstall-skills.js",
+    "superpowers-qwen-cleanup": "./scripts/cleanup-skills.js"
   },
   "scripts": {
     "postinstall": "node scripts/install-skills.js",
@@ -31,11 +31,11 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/ni032mas/qwen-superpowers.git"
+    "url": "https://github.com/ni032mas/superpowers-qwen.git"
   },
-  "homepage": "https://github.com/ni032mas/qwen-superpowers#readme",
+  "homepage": "https://github.com/ni032mas/superpowers-qwen#readme",
   "bugs": {
-    "url": "https://github.com/ni032mas/qwen-superpowers/issues"
+    "url": "https://github.com/ni032mas/superpowers-qwen/issues"
   },
   "engines": {
     "node": ">=18.0.0"

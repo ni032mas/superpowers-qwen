@@ -16,8 +16,8 @@ Guide Qwen Code through a structured development process:
 
 ### Repository
 
-- **URL**: https://github.com/ni032mas/qwen-superpowers
-- **Package**: `qwen-superpowers@1.0.0`
+- **URL**: https://github.com/ni032mas/superpowers-qwen
+- **Package**: `superpowers-qwen@1.0.0`
 - **License**: MIT
 
 ---
@@ -63,7 +63,7 @@ qwen-skills/
 
 ```bash
 # Clone the repository
-git clone git@github.com:ni032mas/qwen-superpowers.git
+git clone git@github.com:ni032mas/superpowers-qwen.git
 cd qwen-skills
 
 # Install globally (copies skills to ~/.qwen/skills/)
@@ -85,10 +85,10 @@ ls ~/.qwen/skills               # macOS/Linux
 
 ```bash
 # Step 1: Remove skills
-qwen-superpowers-cleanup
+superpowers-qwen-cleanup
 
 # Step 2: Remove package
-npm uninstall -g qwen-superpowers
+npm uninstall -g superpowers-qwen
 ```
 
 ### Publishing
@@ -198,7 +198,7 @@ Skills can be invoked in Qwen Code:
 npm pack
 
 # Install from tarball
-npm install -g ./qwen-superpowers-1.0.0.tgz
+npm install -g ./superpowers-qwen-1.0.0.tgz
 
 # Verify skills installed
 dir %USERPROFILE%\.qwen\skills
@@ -207,8 +207,8 @@ dir %USERPROFILE%\.qwen\skills
 # Use: /skills brainstorming
 
 # Cleanup
-qwen-superpowers-cleanup
-npm uninstall -g qwen-superpowers
+superpowers-qwen-cleanup
+npm uninstall -g superpowers-qwen
 ```
 
 ---
@@ -230,4 +230,4 @@ npm uninstall -g qwen-superpowers
 
 - Skills are copied to **global** Qwen directory (`~/.qwen/skills/`) on install
 - npm `preuninstall` scripts don't work for global packages from registry
-- Use `qwen-superpowers-cleanup` before `npm uninstall -g`
+- Use `superpowers-qwen-cleanup` before `npm uninstall -g`

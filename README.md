@@ -21,8 +21,8 @@ Qwen Superpowers is a set of mandatory workflows that guide Qwen Code through di
 
 ```bash
 # Clone and install locally
-git clone git@github.com:ni032mas/qwen-superpowers.git
-cd qwen-superpowers
+git clone git@github.com:ni032mas/superpowers-qwen.git
+cd superpowers-qwen
 npm install -g .
 ```
 
@@ -30,7 +30,7 @@ npm install -g .
 
 ```bash
 # Install directly from GitHub
-npm install -g github:ni032mas/qwen-superpowers
+npm install -g github:ni032mas/superpowers-qwen
 ```
 
 ### Verify Installation
@@ -51,21 +51,21 @@ Or use the explicit command:
 
 ```bash
 # Step 1: Remove skills from ~/.qwen/skills/
-qwen-superpowers-cleanup
+superpowers-qwen-cleanup
 
 # Step 2: Remove the npm package
-npm uninstall -g qwen-superpowers
+npm uninstall -g superpowers-qwen
 ```
 
 Or use the interactive uninstaller:
 ```bash
-qwen-superpowers-uninstall
-npm uninstall -g qwen-superpowers
+superpowers-qwen-uninstall
+npm uninstall -g superpowers-qwen
 ```
 
 **If you already removed the package**, cleanup skills manually:
 ```bash
-qwen-superpowers-cleanup
+superpowers-qwen-cleanup
 ```
 
 Or remove manually:
@@ -98,13 +98,13 @@ rm -rf ~/.qwen/skills/executing-plans
 
 ```bash
 # If installed via npm
-npm update -g qwen-superpowers
+npm update -g superpowers-qwen
 
 # If installed from GitHub
-npm update -g github:YOUR_USERNAME/qwen-superpowers
+npm update -g github:YOUR_USERNAME/superpowers-qwen
 
 # If installed manually (Git)
-cd qwen-superpowers
+cd superpowers-qwen
 git pull
 ```
 
