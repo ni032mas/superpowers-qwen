@@ -3,4 +3,5 @@
 .github
 *.md
 !README.md
-scripts/uninstall-skills.js
+qwen-extension.json
+qwen-superpowers-*.tgz
