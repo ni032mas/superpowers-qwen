@@ -2,9 +2,7 @@
 
 ## How Skills Work
 
-**Important:** Skills in Qwen Code require **explicit invocation**. They do NOT activate automatically based on description matching.
-
-### Ways to invoke a skill:
+Skills are invoked explicitly by the user:
 
 1. **Slash command:**
    ```
@@ -15,15 +13,6 @@
    ```
    use brainstorming skill to help me plan a feature
    ```
-
-3. **Direct instruction:**
-   ```
-   invoke the test-driven-development skill
-   ```
-
-### Why automatic activation doesn't work
-
-Qwen Code's skill system is experimental and currently requires explicit invocation. The `description` field in `SKILL.md` helps the model understand when to suggest using a skill, but won't trigger automatic activation.
 
 ## Publishing to npm
 
