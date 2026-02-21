@@ -1,5 +1,20 @@
 # Development
 
+## Git Hooks
+
+This project uses git hooks for code quality enforcement. To enable them:
+
+```bash
+# Configure git to use .githooks directory
+git config core.hooksPath .githooks
+```
+
+**Available hooks:**
+- `commit-msg` — Validates conventional commit message format
+- `pre-commit` — Runs before each commit
+- `pre-merge-commit` — Runs before merge commits
+- `pre-push` — Runs before push
+
 ## How Skills Work
 
 Skills are invoked explicitly by the user:
